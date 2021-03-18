@@ -1,5 +1,14 @@
 <h1>Songs & Artists within this Genre:</h1>
-
-<%@genre.songgenres.each do |sgs|%>
-    <%=sgs.song.name%>
+<ul>
+<%@genre.song_genres.each do |sg|%>
+ <li><a href="/songs/<%= sg.song.id %>" > <%= sg.song.name%> </li>
     <%end%>
+</ul>
+
+<ul>
+<%@genre.song_genres.each do |sg|%>
+ <li><a href="/artists/<%= sg.song.artist.id %>" > <%= sg.song.artist.name%> </li>
+    <%end%>
+</ul>
+
+
